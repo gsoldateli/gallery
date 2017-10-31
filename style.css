@@ -1,0 +1,49 @@
+html {
+	font-size: 16px;
+}
+
+.container {
+	max-width: 1120px;
+	margin: 0 auto;
+}
+
+.gallery-container {
+	height: 600px;
+	padding: 1rem;
+	background-image: url('images/carro3.jpg');
+	position: relative;
+	background-size: cover;
+}
+
+.gallery-nav {
+	padding: 0.5rem;
+	background: linear-gradient(#333, #fff, #333);
+}
+
+.gallery-nav::after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+
+.gallery-item {
+	max-height: 160px;
+	width: 20%;
+	overflow: hidden;
+	float: left;
+	cursor: pointer;
+}
+
+.gallery-item:nth-child(even) {
+	margin: 0 .5rem;
+	display: block;
+}
+.gallery-item > img {
+	width: 100%;
+	height: auto;
+	transition: transform 0.3s;
+}
+
+.gallery-item:hover > img {
+	transform: scale(1.3);
+}
