@@ -24,8 +24,7 @@ html {
 	padding: 1rem;	
 	background-size: cover;
 	background-position: center;
-	//transition: background 0.3s;
-	background-image: url('images/carro3.jpg');
+	background-image: url('images/carro1.jpg');
     animation-name: bg-in;
     animation-duration: .5s;
     animation-direction: forward;
@@ -61,7 +60,7 @@ html {
 
 .gallery-item {
 	max-height: 120px;
-	width: 20%;
+	width: 18%;
 	overflow: hidden;
 	float: left;
 	cursor: pointer;
