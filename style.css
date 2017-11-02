@@ -65,6 +65,14 @@ html {
 	top: 1rem;
 }
 
+@media (max-width: 600px) 
+{
+  .gallery-nav
+   {
+    top: 1rem;
+   }
+}
+
 .gallery-item {
 	max-height: 100px;
     width: 19.6%;
