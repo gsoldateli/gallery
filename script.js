@@ -19,7 +19,7 @@ function Gallery() {
 			if(swipeDir === 'none') return false;
 
 			var activeItem = document.querySelector('.gallery-item.active');
-			console.log(activeItem);
+
 			var selectedItem;
 			if(swipeDir === "left" || swipeDir === "top") {
 				//Previous
@@ -47,9 +47,6 @@ function Gallery() {
 			} else if (selectedItem.click) {
 			   selectedItem.click();
 			}
-			//Shorthand notation to call click/onclick action from element depending on browser
-			//(selectedItem.click || selectedItem.onclick ||function(){} )();
-
 		});
 
 		this.changeImage(this.items[0]);
@@ -61,18 +58,20 @@ function Gallery() {
 
 		//removes all active items
 		self.items.forEach(function(item){
-			console.log(item.className);
-			item.className = item.className.replace(/ active /g,'');
+			item.classList.remove('active');
 		});
 
 		//set the selected item as active
-		item.className += ' active ';
+		item.classList.add('active');
 
-		this.bg.className = self.bg.className.replace(/ fadeout /g,'').replace(/ fadein /g,'');
-		this.bg.className += ' fadeout ';
+
+		self.bg.classList.remove('fadeout','fadein');
+		self.bg.classList.add('fadeout');
 
 		setTimeout(function(){
-			self.bg.className = self.bg.className.replace(/ fadeout /g,' fadein ');
+			//self.bg.className = self.bg.className.replace(/ fadeout /g,' fadein ');
+			self.bg.classList.remove('fadeout');
+			self.bg.classList.add('fadein');
 			self.bg.style.backgroundImage = "url('"+src+"')";
 		},500);
 		
